@@ -33,6 +33,7 @@ main .data {
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
+	gap: 2rem;
 	margin-bottom: 5rem;
 }
 
@@ -62,9 +63,14 @@ main .data {
 	box-shadow: 0 0 5px white;
 }
 
-.container .list {
+.container .guest-list {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	margin: 2rem auto;
+}
+
+.guest-list > p {
+	color: lightcoral;
+	text-align: left;
 }
