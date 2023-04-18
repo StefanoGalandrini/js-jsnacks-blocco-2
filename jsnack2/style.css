@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	color: white;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main .container {
+	max-width: 80vw;
+	margin-inline: auto;
+	background-color: rgb(10, 40, 5);
+	padding: 3rem 2rem;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.container .first-names {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 50%
+}
+
+.input-numbers .last-names {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 50%
+}
+
+.container .btn-input {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	border: none;
+	padding: 1rem 4rem;
+	font-size: 1.5rem;
+	border-radius: 30px;
+	transition: all 300ms;
+}
+
+.input-numbers .btn-input:hover {
+	background-color: white;
+	box-shadow: 0 0 5px white;
+}
+
+.container .list {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 2rem auto;
+}
