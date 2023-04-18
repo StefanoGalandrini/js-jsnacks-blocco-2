@@ -35,49 +35,53 @@ const arrLastName = [
 	"Azzurri",
 ];
 
-// displays first and last names to be mixed
-let firstNameFather = document.querySelector(".first-names");
-let newFirst = document.createElement("p");
-newFirst.textContent = arrFirstName.join(", ");
-firstNameFather.appendChild(newFirst);
+let guestButton = document.querySelector(".btn-input");
 
-let lastNameFather = document.querySelector(".last-names");
-let newLast = document.createElement("p");
-newLast.textContent = arrLastName.join(", ");
-lastNameFather.appendChild(newLast);
+guestButton.addEventListener("click", function () {
+	// displays first and last names to be mixed
+	let firstNameFather = document.querySelector(".first-names");
+	let newFirst = document.createElement("p");
+	newFirst.textContent = arrFirstName.join(", ");
+	firstNameFather.appendChild(newFirst);
 
-// check the lenghth of the arrays to loop for the greater lenghth
-let maxLenght;
-arrFirstName.length >= arrLastName.length
-	? (maxLenght = arrFirstName.length)
-	: (maxLenght = arrLastName.length);
+	let lastNameFather = document.querySelector(".last-names");
+	let newLast = document.createElement("p");
+	newLast.textContent = arrLastName.join(", ");
+	lastNameFather.appendChild(newLast);
 
-// iterate through the arrays,
-// generate random numbers for first and last name
-// push those random names into the guest list array
-for (let i = 0; i < maxLenght; i++) {
-	// generate a couple of random indexes for each guest first and last name
-	let firstNameIndex = Math.floor(Math.random() * arrFirstName.length);
-	let lastNameIndex = Math.floor(Math.random() * arrLastName.length);
+	// check the lenghth of the arrays to loop for the greater lenghth
+	let maxLenght;
+	arrFirstName.length >= arrLastName.length
+		? (maxLenght = arrFirstName.length)
+		: (maxLenght = arrLastName.length);
 
-	let firstName;
-	let lastName;
+	// iterate through the arrays,
+	// generate random numbers for first and last name
+	// push those random names into the guest list array
+	for (let i = 0; i < maxLenght; i++) {
+		// generate a couple of random indexes for each guest first and last name
+		let firstNameIndex = Math.floor(Math.random() * arrFirstName.length);
+		let lastNameIndex = Math.floor(Math.random() * arrLastName.length);
 
-	if (
-		firstNameIndex < arrFirstName.length &&
-		lastNameIndex < arrLastName.length
-	) {
-		firstName = arrFirstName[firstNameIndex];
-		lastName = arrLastName[lastNameIndex];
-	} else {
-		firstName = "...";
-		lastName = "...";
+		let firstName;
+		let lastName;
+
+		if (
+			firstNameIndex < arrFirstName.length &&
+			lastNameIndex < arrLastName.length
+		) {
+			firstName = arrFirstName[firstNameIndex];
+			lastName = arrLastName[lastNameIndex];
+		} else {
+			firstName = "...";
+			lastName = "...";
+		}
+
+		let fullName = `${firstName} ${lastName}`;
+
+		let newElementFather = document.querySelector(".guest-list");
+		let newGuest = document.createElement("p");
+		newGuest.textContent = i + 1 + ") " + fullName;
+		newElementFather.appendChild(newGuest);
 	}
-
-	let fullName = `${firstName} ${lastName}`;
-
-	let newElementFather = document.querySelector(".guest-list");
-	let newGuest = document.createElement("p");
-	newGuest.textContent = i + 1 + ") " + fullName;
-	newElementFather.appendChild(newGuest);
-}
+});
