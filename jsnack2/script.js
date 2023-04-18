@@ -30,4 +30,28 @@ const arrLastName = [
 	"Salmone",
 	"Dorati",
 	"Azzurri",
+	"Prova",
 ];
+
+// declare empty array for random first and last names
+let guestNames = [];
+
+// check the lenghth of the arrays to loop for the greater lenghth
+let maxLenght;
+arrFirstName.lenght >= arrLastName.lenght
+	? (maxLenght = arrFirstName.lenght)
+	: (maxLenght = arrLastName.length);
+console.log(maxLenght);
+
+// iterate through the arrays,
+// generate random numbers for first and last name
+// push those random names into the guest list array
+for (let i = 0; i < arrFirstName.length; i++) {
+	let firstNameIndex = Math.floor(Math.random() * arrFirstName.length);
+	let lastNameIndex = Math.floor(Math.random() * arrLastName.length);
+	let fullName =
+		arrFirstName[firstNameIndex] + " " + arrLastName[lastNameIndex];
+	fullNames.push(fullName);
+}
+
+console.log(fullNames);

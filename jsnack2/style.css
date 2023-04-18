@@ -13,36 +13,37 @@
 
 main .container {
 	max-width: 80vw;
+	height: 90vh;
 	margin-inline: auto;
 	background-color: rgb(10, 40, 5);
 	padding: 3rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 h1 {
-	text-align: center;
 	margin-bottom: 5rem;
 }
 
-.container {
+main .data {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	flex-wrap: wrap;
+	margin-bottom: 5rem;
 }
 
 .container .first-names {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex: 0 0 50%
+	flex: 0 0 30%;
+	text-align: center;
 }
 
-.input-numbers .last-names {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex: 0 0 50%
+.container .last-names {
+	flex: 0 0 30%;
+	text-align: center;
 }
 
 .container .btn-input {
@@ -52,10 +53,11 @@ h1 {
 	padding: 1rem 4rem;
 	font-size: 1.5rem;
 	border-radius: 30px;
+	margin-bottom: 5rem;
 	transition: all 300ms;
 }
 
-.input-numbers .btn-input:hover {
+.container .btn-input:hover {
 	background-color: white;
 	box-shadow: 0 0 5px white;
 }
