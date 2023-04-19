@@ -11,6 +11,16 @@ let sumTotal = 0;
 const sumButton = document.querySelector(".btn-sum");
 
 sumButton.addEventListener("click", function () {
+	// declare DOM variables and reset them
+	let elementFather = document.querySelector(".numbers");
+	let oddFather = document.querySelector(".odd-numbers");
+	let divSum = document.querySelector(".sum");
+
+	elementFather.innerHTML = ``;
+	oddFather.innerHTML = ``;
+	divSum.innerHTML = ``;
+
+	// reset arrays to empty
 	arrIntegers.length = 0;
 	arrOddPosition.length = 0;
 
@@ -19,7 +29,6 @@ sumButton.addEventListener("click", function () {
 		arrIntegers.push(randomNumber);
 	}
 	// displays all the numbers
-	let elementFather = document.querySelector(".numbers");
 	let newNumber = document.createElement("p");
 	newNumber.textContent = arrIntegers.join(", ");
 	elementFather.appendChild(newNumber);
@@ -28,14 +37,11 @@ sumButton.addEventListener("click", function () {
 		arrOddPosition.push(arrIntegers[i]);
 	}
 	// displays the numbers with original odd index (zero excluded)
-	let oddFather = document.querySelector(".odd-numbers");
 	let newOdd = document.createElement("p");
 	newOdd.textContent = arrOddPosition.join(", ");
 	oddFather.appendChild(newOdd);
 
-	let divSum = document.querySelector(".sum");
 	sumTotal = 0;
-	divSum.innerHTML = ``;
 	for (let i = 0; i < arrOddPosition.length; i++) {
 		sumTotal = sumTotal + arrOddPosition[i];
 	}

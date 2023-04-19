@@ -9,12 +9,9 @@ let arrValues = [];
 let inputButton = document.querySelector(".btn-input");
 let resultDiv = document.querySelector(".values");
 
-// reset
-resultDiv.innerHTML = ``;
-
 inputButton.addEventListener("click", function () {
 	// reset
-	resultDiv.innerHTML = ``;
+	resultDiv.innerHTML = "";
 	arrValues = [];
 
 	// parse Array to push the odd input values

@@ -38,13 +38,20 @@ const arrLastName = [
 let guestButton = document.querySelector(".btn-input");
 
 guestButton.addEventListener("click", function () {
-	// displays first and last names to be mixed
+	// declare DOM variables and reset them
 	let firstNameFather = document.querySelector(".first-names");
+	let lastNameFather = document.querySelector(".last-names");
+	let newElementFather = document.querySelector(".guest-list");
+
+	firstNameFather.innerHTML = "";
+	lastNameFather.innerHTML = "";
+	newElementFather.innerHTML = "";
+
+	// displays first and last names to be mixed
 	let newFirst = document.createElement("p");
 	newFirst.textContent = arrFirstName.join(", ");
 	firstNameFather.appendChild(newFirst);
 
-	let lastNameFather = document.querySelector(".last-names");
 	let newLast = document.createElement("p");
 	newLast.textContent = arrLastName.join(", ");
 	lastNameFather.appendChild(newLast);
@@ -79,7 +86,6 @@ guestButton.addEventListener("click", function () {
 
 		let fullName = `${firstName} ${lastName}`;
 
-		let newElementFather = document.querySelector(".guest-list");
 		let newGuest = document.createElement("p");
 		newGuest.textContent = i + 1 + ") " + fullName;
 		newElementFather.appendChild(newGuest);
