@@ -17,9 +17,9 @@ const arrFirstName = [
 	"Lisa",
 	"Cristina",
 	"Gianfranco",
-	"...",
-	"....",
-	".....",
+	"?",
+	"?",
+	"?",
 ];
 
 const arrLastName = [
@@ -67,15 +67,17 @@ guestButton.addEventListener("click", function () {
 	// push those random names into the guest list array
 	for (let i = 0; i < maxLenght; i++) {
 		// generate a couple of random indexes for each guest first and last name
-		let firstNameIndex = Math.floor(Math.random() * arrFirstName.length);
-		let lastNameIndex = Math.floor(Math.random() * arrLastName.length);
+		let firstNameIndex = Math.floor(Math.random() * maxLenght);
+		let lastNameIndex = Math.floor(Math.random() * maxLenght);
 
 		let firstName;
 		let lastName;
 
 		if (
 			firstNameIndex < arrFirstName.length &&
-			lastNameIndex < arrLastName.length
+			lastNameIndex < arrLastName.length &&
+			firstNameIndex < arrLastName.length &&
+			lastNameIndex < arrFirstName.length
 		) {
 			firstName = arrFirstName[firstNameIndex];
 			lastName = arrLastName[lastNameIndex];
